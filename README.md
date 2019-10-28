@@ -16,3 +16,11 @@ Packages required to run project:
 
 Checkpoint 1:
 https://www.youtube.com/watch?v=B6FkDZKcnrU&feature=youtu.be
+
+Checkpoint 2:
+Short Version 4min:
+https://youtu.be/IyRGFbamF9Y
+
+Long Version 10+min:
+https://youtu.be/dmwH0NOVF5M
+
