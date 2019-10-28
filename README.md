@@ -24,3 +24,11 @@ https://youtu.be/IyRGFbamF9Y
 Long Version 10+min:
 https://youtu.be/dmwH0NOVF5M
 
+Sources/Tutorials:
+UI:
+https://www.youtube.com/watch?v=rsZM3q74Q2k
+Unity Raycast:
+https://www.youtube.com/watch?v=_yf5vzZ2sYE
+Spawning Objects
+https://docs.unity3d.com/Manual/UNetSpawning.html
+https://www.youtube.com/watch?v=E7gmylDS1C4
