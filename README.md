@@ -43,3 +43,7 @@ https://www.youtube.com/watch?v=_yf5vzZ2sYE
 Spawning Objects
 https://docs.unity3d.com/Manual/UNetSpawning.html
 https://www.youtube.com/watch?v=E7gmylDS1C4
+
+Touch Controls:
+https://www.youtube.com/watch?v=CmCVtEZUKIs
+https://gist.github.com/ditzel/0257d74a7a04626efce7bd1f7a6cfaa0
