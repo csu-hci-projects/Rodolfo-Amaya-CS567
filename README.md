@@ -24,6 +24,17 @@ https://youtu.be/IyRGFbamF9Y
 Long Version 10+min:
 https://youtu.be/dmwH0NOVF5M
 
+Checkpoint 3:
+https://youtu.be/IS8oT9ZV6mw
+
+
+
+
+
+
+
+
+
 Sources/Tutorials:
 UI:
 https://www.youtube.com/watch?v=rsZM3q74Q2k
