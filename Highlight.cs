@@ -11,7 +11,6 @@ class Highlight : MonoBehaviour
     [SerializeField] public Transform component;
     [SerializeField] public Material defaultMaterial;
     [SerializeField] public Material highLightedMaterial;
-    private bool hl;
     private bool needsUpdate;
 
     public bool highlight;

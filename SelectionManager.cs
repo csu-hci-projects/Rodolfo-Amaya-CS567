@@ -15,41 +15,42 @@ public class SelectionManager : MonoBehaviour
     private ISelector _selector;
     private ISelectionResponse _selectionResponse;
 
+    private Transform _currentLongSelection;
     private Transform _currentSelection;
     private Transform _initialSelection;
 
-    List<Transform> _selections;
+    List<Transform> _CombinableSelections;
 
     private void Awake()
     {
         _selectionResponse = GetComponent<ISelectionResponse>();
         _selector = GetComponent<ISelector>();
         _rayProvider = GetComponent<IRayProvider>();
-        _selections = new List<Transform>();
+        _CombinableSelections = new List<Transform>();
     }
 
-    public List<Transform> GetSelections()
+    public List<Transform> GetCombinableSelections()
     {
-        return _selections;
+        return _CombinableSelections;
+    }
+
+    public Transform GetCurrentLongTouch()
+    {
+        return _currentLongSelection;
     }
 
     public void DeleteSelections()
     {
-
-        foreach (Transform t in _selections)
+        foreach (Transform t in _CombinableSelections)
         {
             //_selections.Remove(t);
             _selectionResponse.OnDeselect(t);
-            Destroy(t.gameObject);
+            //Destroy(t.gameObject);
         }
-        _selections = new List<Transform>();
-        
+        _CombinableSelections = new List<Transform>();
     }
 
-    public void CombineSelections()
-    {
-        
-    }
+    private float TouchTime = 0;
 
     // Update is called once per frame
     void Update()
@@ -64,43 +65,57 @@ public class SelectionManager : MonoBehaviour
             if (Input.touches[0].phase == TouchPhase.Began)
             {
                 Debug.Log("Touch Pressed");
+                TouchTime = Time.time;
+                //print(TouchTime);
                 _selector.Check(_rayProvider.CreateRay());
                 _initialSelection = _selector.GetSelection();
             }
 
             if (Input.touches[0].phase == TouchPhase.Ended)
             {
+                //print(TouchTime);
                 _selector.Check(_rayProvider.CreateRay());
                 _currentSelection = _selector.GetSelection();
-                //print(_currentSelection);
-                //print(_initialSelection);
 
                 Debug.Log("Touch Lifted/Released");
                 if (_currentSelection != null && _initialSelection == _currentSelection)
                 {
-                    updateSelections(_currentSelection);
+                    var ObjTags = _currentSelection.GetComponent<Tags>();
+                    if (ObjTags.hasTag("Combinable"))
+                    {
+                        updateSelections(_currentSelection);
+                    }
+
+                    if (Time.time - TouchTime > 2.0)
+                    {
+                        //print("QUACK");
+                        print(_selector.GetSelection().name);
+                        _currentLongSelection = _selector.GetSelection();
+                    }
                 }
+                
+
             }
         }
     }
 
     void updateSelections(Transform _selection)
     {
-        if (_selections.Count == 0)
+        if (_CombinableSelections.Count == 0)
         {
             //print("ADDING INITIAL");
-            _selections.Add(_currentSelection);
+            _CombinableSelections.Add(_currentSelection);
         }
-        else if (_selections.Count > 0)
+        else if (_CombinableSelections.Count > 0)
         {
             bool Onhard = false;
-            List<Transform> lockedSelections = _selections;
-            foreach (Transform t in _selections)
+            List<Transform> lockedSelections = _CombinableSelections;
+            foreach (Transform t in _CombinableSelections)
             {
                 if (t == _currentSelection)
                 {
                     //print("DESELECTING");
-                    _selections.Remove(_currentSelection);
+                    _CombinableSelections.Remove(_currentSelection);
                     _selectionResponse.OnDeselect(_currentSelection);
                     Onhard = true;
                     break;
@@ -109,12 +124,12 @@ public class SelectionManager : MonoBehaviour
             if (Onhard == false)
             {
                 //print("ADDING");
-                _selections.Add(_currentSelection);
+                _CombinableSelections.Add(_currentSelection);
             }
         }
-        if(_selections.Count > 0)
+        if(_CombinableSelections.Count > 0)
         {
-            foreach (Transform t in _selections)
+            foreach (Transform t in _CombinableSelections)
             {
                 _selectionResponse.OnSelect(t);
             }
