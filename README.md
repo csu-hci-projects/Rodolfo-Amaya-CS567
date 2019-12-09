@@ -27,6 +27,12 @@ https://youtu.be/dmwH0NOVF5M
 Checkpoint 3:
 https://youtu.be/IS8oT9ZV6mw
 
+Checkpoint 4:
+https://youtu.be/wAgJVwLiHDo
+
+Checkpoint 5:
+https://youtu.be/7dMp-eZF2XI
+
 
 
 
