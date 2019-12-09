@@ -22,10 +22,14 @@ public class ScrollWindowTextManager : MonoBehaviour
     public static string StructInformation = "In object-oriented programming (OOP), encapsulation refers to the bundling of data with the methods that operate on that data, or the restricting of direct access to some of an object's components. Encapsulation is used to hide the values or state of a structured data object inside a class, preventing unauthorized parties' direct access to them. In C programming languages this encapsulation can be done in either a class or a struct.";
 
     public static string MainInformation = "In computer programming, an entry point is where the first instructions of a program are executed, and where the program has access to command line arguments. To start a program's execution, the loader or operating system passes control to its entry point. Alternatively, execution of a program can begin at a named point, either with a conventional name defined by the programming language or operating system or at a caller-specified name. In many C-family languages, this is a function named 'main'; as a result, the entry point is often known as the main function.";
+
+    public static string BlankInformation = "";
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        text.GetComponent<UnityEngine.UI.Text>().text = BlankInformation;
     }
 
     // Update is called once per frame
@@ -61,6 +65,7 @@ public class ScrollWindowTextManager : MonoBehaviour
                     text.GetComponent<UnityEngine.UI.Text>().text = MainInformation;
                     break;
                 default:
+                    text.GetComponent<UnityEngine.UI.Text>().text = BlankInformation;
                     break;
             }
         }

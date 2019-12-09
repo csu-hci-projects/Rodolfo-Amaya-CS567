@@ -51,16 +51,16 @@ public class ObjectSpawnManager : MonoBehaviour
                 ActiveObjects.Add(Instantiate(prefabBool, spawnPoint.position + (spawnPoint.forward * 4f), spawnPoint.rotation));
                 break;
             case ("U16"):
-                ActiveObjects.Add(Instantiate(prefabU16, spawnPoint.position + (spawnPoint.forward * 12f), spawnPoint.rotation));
+                ActiveObjects.Add(Instantiate(prefabU16, spawnPoint.position + (spawnPoint.forward * 12f) + (spawnPoint.up * 2f), spawnPoint.rotation));
                 break;
             case ("U32"):
-                ActiveObjects.Add(Instantiate(prefabU32, spawnPoint.position + (spawnPoint.forward * 16f), spawnPoint.rotation));
+                ActiveObjects.Add(Instantiate(prefabU32, spawnPoint.position + (spawnPoint.forward * 16f) + (spawnPoint.up * 4f), spawnPoint.rotation));
                 break;
             case ("Float"):
-                ActiveObjects.Add(Instantiate(prefabFloat, spawnPoint.position + (spawnPoint.forward * 20f), spawnPoint.rotation));
+                ActiveObjects.Add(Instantiate(prefabFloat, spawnPoint.position + (spawnPoint.forward * 20f) + (spawnPoint.up * 4f), spawnPoint.rotation));
                 break;
             case ("Double"):
-                ActiveObjects.Add(Instantiate(prefabDouble, spawnPoint.position + (spawnPoint.forward * 16f), spawnPoint.rotation));
+                ActiveObjects.Add(Instantiate(prefabDouble, spawnPoint.position + (spawnPoint.forward * 16f) + (spawnPoint.up * 8f), spawnPoint.rotation));
                 break;
             case ("Delete"):
                 if (_selections.Count > 0)
@@ -75,7 +75,7 @@ public class ObjectSpawnManager : MonoBehaviour
                     prefabStruct.transform.localScale = GetCombinedObjectSize();
                     DeleteSelectedAciveObjects();
                     _selectionManager.DeleteSelections();
-                    ActiveObjects.Add(Instantiate(prefabStruct, spawnPoint.position + (spawnPoint.forward * 24f), spawnPoint.rotation));
+                    ActiveObjects.Add(Instantiate(prefabStruct, spawnPoint.position + (spawnPoint.forward * 24f) + (spawnPoint.up * 4f), spawnPoint.rotation));
                 }
                 break;
             default:

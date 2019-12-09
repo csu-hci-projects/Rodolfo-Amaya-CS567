@@ -86,7 +86,7 @@ public class SelectionManager : MonoBehaviour
                         updateSelections(_currentSelection);
                     }
 
-                    if (Time.time - TouchTime > 2.0)
+                    if (Time.time - TouchTime > 1.0)
                     {
                         //print("QUACK");
                         print(_selector.GetSelection().name);
