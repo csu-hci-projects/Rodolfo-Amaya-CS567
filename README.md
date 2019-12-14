@@ -33,7 +33,8 @@ https://youtu.be/wAgJVwLiHDo
 Checkpoint 5:
 https://youtu.be/7dMp-eZF2XI
 
-
+Checkpoint 6:
+https://youtu.be/h_PX7xbZrwg
 
 
 
@@ -53,3 +54,5 @@ https://www.youtube.com/watch?v=E7gmylDS1C4
 Touch Controls:
 https://www.youtube.com/watch?v=CmCVtEZUKIs
 https://gist.github.com/ditzel/0257d74a7a04626efce7bd1f7a6cfaa0
+
+
