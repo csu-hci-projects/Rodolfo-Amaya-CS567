@@ -36,11 +36,9 @@ https://youtu.be/7dMp-eZF2XI
 Checkpoint 6:
 https://youtu.be/h_PX7xbZrwg
 
-
-
-
-
-
+For the past 2 commits, Github has been complaining that I am pushing too many files,
+so I am uploading one giant zip archive with all the files. Just unpack files into Unity projects
+directory, open project from Unity and done.
 
 Sources/Tutorials:
 UI:
